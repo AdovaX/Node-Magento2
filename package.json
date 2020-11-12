@@ -1,5 +1,5 @@
 {
-  "name": "node-magento2",
+  "name": "node-magento",
   "version": "1.1.4",
   "description": "Node JS library to connect to magento 2 API using promises",
   "main": "index.js",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/fabacus/node-magento2#readme",
   "dependencies": {
     "deepmerge": "^0.2.10",
+    "node-magento2": "^1.1.4",
     "qs": "^6.2.1",
     "request": "^2.75.0"
   }

@@ -1,33 +1,26 @@
-/**
- *  Magento 2 Promise API library
- *  File: index.js
- *  We need to define "use strict", so we're doing it here.
- */
-"use strict";
 
-/**
- * Continue with the main functionality.
- */
+"use strict";
 
 const qs = require('qs');
 const request = require('request');
 const deepmerge = require('deepmerge');
+const Magento2 = require('node-magento2');
 
 const defaultOptions = {
-  url: null,
+  url: 'https://indomagento.cf/public/node/',
   store: 'default',
   userAgent: 'Fabacus Magento 2 Library',
   authentication: {
     login: {
       type: 'admin',
-      username: undefined,
-      password: undefined
+      username: "admin",
+      password: "1532587Adova"
     },
     integration: {
-      consumer_key: undefined,
-      consumer_secret: undefined,
-      access_token: undefined,
-      access_token_secret: undefined
+      consumer_key: "mosorz1t5zck238jb2lebxirtebqgdqo",
+      consumer_secret: "b7jvkk0ffddr045e2ekpm9aa865n2u9b",
+      access_token: "wxhsqk14wor3ednr5np9l1t7s7vi45o0",
+      access_token_secret: "6s8xsfq2soypal7euv6weeazl03sei5k"
     }
   }
 }
@@ -163,5 +156,27 @@ class MagentoTwo {
     return url;
   }
 }
+
+
+//instantiate the client object
+const options = {
+  authentication: {
+    integration: {
+      access_token: 'wxhsqk14wor3ednr5np9l1t7s7vi45o0'
+    }
+  }
+}
+
+const mageClient = new Magento2('https://indomagento.cf/public/node/', options)
+mageClient.init();
+
+//basic usage
+mageClient.get('/V1/products', {searchCriteria: 'pageSize=2'} ) //Get a list of all products
+  .then(products => {
+    console.log(products);
+  });
+
+
+
 
 module.exports = MagentoTwo;

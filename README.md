@@ -1,6 +1,4 @@
-This package resolve issue with certificate (https)
-```Error: unable to verify the first certificate```
-
+ 
 ## Installation
 ```bash
 npm install node-magento2
